@@ -37,39 +37,9 @@ return [
     'httpDispatcher'   => [
         // Add global http middleware
         'middlewares' => [
-            \App\Http\Middleware\FavIconMiddleware::class,
+            // \App\Http\Middleware\FavIconMiddleware::class,
             // Allow use @View tag
-            \Swoft\View\Middleware\ViewMiddleware::class,
+            // \Swoft\View\Middleware\ViewMiddleware::class,
         ],
-    ],
-    'db'               => [
-        'class'    => Database::class,
-        'dsn'      => 'mysql:dbname=test;host=172.17.0.2',
-        'username' => 'root',
-        'password' => 'swoft123456',
-    ],
-    'db2'              => [
-        'class'      => Database::class,
-        'dsn'        => 'mysql:dbname=test2;host=172.17.0.2',
-        'username'   => 'root',
-        'password'   => 'swoft123456',
-        'dbSelector' => bean(DbSelector::class)
-    ],
-    'db2.pool'         => [
-        'class'    => Pool::class,
-        'database' => bean('db2')
-    ],
-    'db3'              => [
-        'class'    => Database::class,
-        'dsn'      => 'mysql:dbname=test2;host=172.17.0.2',
-        'username' => 'root',
-        'password' => 'swoft123456'
-    ],
-    'db3.pool'         => [
-        'class'    => Pool::class,
-        'database' => bean('db3')
-    ],
-    'migrationManager' => [
-        'migrationPath' => '@app/Migration',
     ],
 ];
